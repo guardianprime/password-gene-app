@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Password generator app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  Password Generator
-
-  P4$5W0rD!
-
-  Character Length
-
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
-
-</body>
+    <title>Frontend Mentor | Password generator app</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Password Generator</h1>
+      <div>
+        <div>
+          <input type="text" placeholder="P4$5W0rD!"/>
+          <span>copied!</span>
+          <img src="./assets/images/icon-copy.svg" alt="copy symbol" />
+        </div>
+        <label>
+          Character length
+          <span id="char-length">10</span>
+        </label>
+        <input
+          type="range"
+          min="8"
+          max="15"
+          value="10"
+          id="char-length-input"
+        />
+        <div>
+          <input type="checkbox" /><span>Include Uppercase Letters</span>
+          <input type="checkbox" /><span
+            >Include Lowercase Letters Include</span
+          >
+          <input type="checkbox" /><span>Include Numbers</span>
+          <input type="checkbox" /><span>Include Symbols</span>
+        </div>
+      </div>
+      <div>
+        <span>Strength</span>
+        <div class="strength-container">
+          <div class="'strength-div"></div>
+          <div class="'strength-div"></div>
+          <div class="'strength-div"></div>
+          <div class="'strength-div"></div>
+        </div>
+      </div>
+      <button>
+        Generate
+        <img
+          src="./assets/images/icon-arrow-right.svg"
+          alt="right arrow icon"
+        />
+      </button>
+    </div>
+  </body>
 </html>
