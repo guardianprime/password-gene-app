@@ -3,27 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-
     <title>Frontend Mentor | Password generator app</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="main">
+    <header>
       <h1>Password Generator</h1>
-      <div>
-        <div>
-          <input type="text" placeholder="P4$5W0rD!"/>
-          <span>copied!</span>
-          <img src="./assets/images/icon-copy.svg" alt="copy symbol" />
-        </div>
-        <label>
-          Character length
+    </header>
+    <main>
+    <div class="main__div">
+      <div class="first-div">
+        <input type="text" placeholder="P4$5W0rD!" />
+        <span class="hide">copied!</span>
+        <img
+          src="./assets/images/icon-copy.svg"
+          alt="copy symbol"
+          id="copy-img"
+        />
+      </div>
+      <div class="second-div">
+       <div>
+        <label for="char-length-input">
+          <span>Character length</span>
           <span id="char-length">10</span>
         </label>
         <input
@@ -33,31 +41,48 @@
           value="10"
           id="char-length-input"
         />
-        <div>
-          <input type="checkbox" /><span>Include Uppercase Letters</span>
-          <input type="checkbox" /><span
-            >Include Lowercase Letters Include</span
-          >
-          <input type="checkbox" /><span>Include Numbers</span>
-          <input type="checkbox" /><span>Include Symbols</span>
+       </div>
+        <div class="list-container">
+          <ul>
+            <li>
+              <input type="checkbox" id="uppercase"/>
+              <label for="uppercase">Include Uppercase Letters</label>
+            </li>
+            <li> 
+              <input type="checkbox" id="lowercase"/>
+              <label for="lowercase">Include Lowercase Letters Include</label
+            ></li>
+            <li>
+              <input type="checkbox" id="numbers"/>
+              <label for="">Include Numbers</label for="numbers">
+            </li>
+            <li>
+              <input type="checkbox" id="symbols"/>
+              <label for="">Include Symbols</label for="symbols">
+            </li>
+          </ul>
         </div>
-      </div>
-      <div>
-        <span>Strength</span>
         <div class="strength-container">
-          <div class="'strength-div"></div>
-          <div class="'strength-div"></div>
-          <div class="'strength-div"></div>
-          <div class="'strength-div"></div>
+         <div> <span>Strength</span></div>
+          <div class="strength-wrapper">
+            <span id="strength-name">MEDIUM</span>
+           <div class="strength-status-container">
+            <div class="strength-status"></div>
+            <div class="strength-status"></div>
+            <div class="strength-status"></div>
+            <div class="strength-status"></div>
+           </div>
+          </div>
         </div>
+        <button>
+          Generate
+          <img
+            src="./assets/images/icon-arrow-right.svg"
+            alt="right arrow icon"
+          />
+        </button>
       </div>
-      <button>
-        Generate
-        <img
-          src="./assets/images/icon-arrow-right.svg"
-          alt="right arrow icon"
-        />
-      </button>
     </div>
-  </body>
+  </main>
+</body>
 </html>
