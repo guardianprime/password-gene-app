@@ -10,7 +10,7 @@
       href="./assets/images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Password generator app</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -18,71 +18,71 @@
       <h1>Password Generator</h1>
     </header>
     <main>
-    <div class="main__div">
-      <div class="first-div">
-        <input type="text" placeholder="P4$5W0rD!" />
-        <span class="hide">copied!</span>
-        <img
-          src="./assets/images/icon-copy.svg"
-          alt="copy symbol"
-          id="copy-img"
-        />
-      </div>
-      <div class="second-div">
-       <div>
-        <label for="char-length-input">
-          <span>Character length</span>
-          <span id="char-length">10</span>
-        </label>
-        <input
-          type="range"
-          min="8"
-          max="15"
-          value="10"
-          id="char-length-input"
-        />
-       </div>
-        <div class="list-container">
-          <ul>
-            <li>
-              <input type="checkbox" id="uppercase"/>
-              <label for="uppercase">Include Uppercase Letters</label>
-            </li>
-            <li> 
-              <input type="checkbox" id="lowercase"/>
-              <label for="lowercase">Include Lowercase Letters Include</label
-            ></li>
-            <li>
-              <input type="checkbox" id="numbers"/>
-              <label for="">Include Numbers</label for="numbers">
-            </li>
-            <li>
-              <input type="checkbox" id="symbols"/>
-              <label for="">Include Symbols</label for="symbols">
-            </li>
-          </ul>
-        </div>
-        <div class="strength-container">
-         <div> <span>Strength</span></div>
-          <div class="strength-wrapper">
-            <span id="strength-name">MEDIUM</span>
-           <div class="strength-status-container">
-            <div class="strength-status"></div>
-            <div class="strength-status"></div>
-            <div class="strength-status"></div>
-            <div class="strength-status"></div>
-           </div>
-          </div>
-        </div>
-        <button>
-          Generate
+      <div class="main__div">
+        <div class="first-div">
+          <input type="text" placeholder="P4$5W0rD!" disabled value="P4$5W0rD!"/>
+          <span class="hide">copied!</span>
           <img
-            src="./assets/images/icon-arrow-right.svg"
-            alt="right arrow icon"
+            src="./assets/images/icon-copy.svg"
+            alt="copy symbol"
+            id="copy-img"
           />
-        </button>
+        </div>
+        <div class="second-div">
+          <div>
+            <label for="char-length-input" class="char-length-label">
+              <span>Character length</span>
+              <span id="char-length">10</span>
+            </label>
+            <input
+              type="range"
+              min="8"
+              max="15"
+              value="10"
+              id="char-length-input"
+            />
+          </div>
+          <div class="list-container">
+            <ul>
+              <li>
+                <input type="checkbox" id="uppercase" />
+                <label for="uppercase">Include Uppercase Letters</label>
+              </li>
+              <li>
+                <input type="checkbox" id="lowercase" />
+                <label for="lowercase">Include Lowercase Letters</label>
+              </li>
+              <li>
+                <input type="checkbox" id="numbers" />
+                <label for="numbers">Include Numbers</label>
+              </li>
+              <li>
+                <input type="checkbox" id="symbols" />
+                <label for="symbols">Include Symbols</label>
+              </li>
+            </ul>
+          </div>
+          <div class="strength-container">
+            <div><span>Strength</span></div>
+            <div class="strength-wrapper">
+              <span id="strength-name">MEDIUM</span>
+              <div class="strength-status-container">
+                <div class="strength-status"></div>
+                <div class="strength-status"></div>
+                <div class="strength-status"></div>
+                <div class="strength-status"></div>
+              </div>
+            </div>
+          </div>
+          <button>
+            Generate
+            <img
+              src="./assets/images/icon-arrow-right.svg"
+              alt="right arrow icon"
+            />
+          </button>
+        </div>
       </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>
