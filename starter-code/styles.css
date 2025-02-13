@@ -25,6 +25,7 @@ header {
 h1 {
   text-align: center;
   font-size: 1.7rem;
+  color: #817D92;
 }
 
 main {
@@ -112,6 +113,10 @@ ul {
   justify-content: space-between;
 }
 
+.strength-text {
+  color: #817D92;
+}
+
 #strength-name {
   width: 40%;
 }
@@ -155,3 +160,13 @@ input[type="range"] {
   width: 15px;
   height: 15px;
 }
+
+
+ /* STYLING FOR TABLET SCREENS */
+ @media screen and (min-width: 450px) {
+  .main__div {
+    width: 540px;
+    height: 695px;
+    margin-inline: auto;
+  }
+ }
