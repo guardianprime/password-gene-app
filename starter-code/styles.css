@@ -64,7 +64,7 @@ main {
 .first-div,
 .second-div {
   background-color: #1c1c1c;
-  padding: 15px;
+  padding: 20px;
 }
 
 ul li {
@@ -72,25 +72,28 @@ ul li {
 }
 
 .char-length-label {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .char-length-label span:first-of-type {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .list-container {
-    height: 40%;
-    width: 100%;
+  height: 45%;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 ul {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
-
 
 .strength-container {
   display: flex;
@@ -133,6 +136,22 @@ ul {
 
 button {
   background-color: #a4ffaf;
+  margin-top: 20px;
   width: 100%;
   height: 12%;
+  border: none;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.second-div input {
+  accent-color: #a4ffaf;
+}
+
+.list-container input {
+  width: 15px;
+  height: 15px;
 }
