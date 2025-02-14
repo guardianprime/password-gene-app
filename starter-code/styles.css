@@ -111,6 +111,7 @@ ul {
   height: 60%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .strength-text {
@@ -118,7 +119,8 @@ ul {
 }
 
 #strength-name {
-  width: 40%;
+  width: 50%;
+  text-align: right;
 }
 
 .strength-status-container {
