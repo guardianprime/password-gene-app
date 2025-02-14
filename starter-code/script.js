@@ -2,16 +2,15 @@ const btn = document.getElementById("btn");
 const copyBtn = document.getElementById("copy-img");
 const copyText = document.getElementById("copy-text");
 const charLengthEl = document.getElementById("char-length");
-const charlengthInput = document.getElementById("char-length-input").value;
-const checkboxUppercase = document.getElementById("uppercase").checked;
-const checkboxLowercase = document.getElementById("lowercase").checked;
-const checkboxNumbers = document.getElementById("numbers").checked;
-const checkboxSymbols = document.getElementById("symbols").checked;
 const strengthStatusEl = document.querySelectorAll(".strength-status");
+const charLengthInput = document.getElementById("char-length-input");
+const passwordInputEl = document.getElementById("password-input");
 
 
-btn.addEventListener("click", generatePassword);
-charlengthEl.textContent = charLengthInput;
+btn.addEventListener("click", generate);
+charLengthInput.addEventListener("change", (e) => {
+    charLengthEl.textContent = e.target.value;
+});
 
 let lowercase = "abscdefghijklmnopqrstuvwxyz";
 let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -19,19 +18,28 @@ let numbers = "123457890";
 let symbols = "!@#$%^&*()-_=+[]{}|;:,.<>?";
 
 
-function generatePassword() {
+function generate() {
+    const checkboxUppercase = document.getElementById("uppercase").checked;
+    const checkboxNumbers = document.getElementById("numbers").checked;
+    const checkboxSymbols = document.getElementById("symbols").checked;
+    charLength = parseInt(charLengthInput.value);
+    const password = generatePassword(checkboxUppercase, checkboxNumbers, checkboxSymbols, charLength);
+    passwordInputEl.value = password;
+}
+
+function generatePassword(upper, num, sym, len) {
     let char = lowercase;
-    if (checkboxUppercase) char += uppercase;
-    if (checkboxNumbers) char += numbers;
-    if (checkboxSymbols) char += symbols;
+    if (upper) char += uppercase;
+    if (num) char += numbers;
+    if (sym) char += symbols;
 
-    let pass = "";
 
-    for (let i = 0; i < charLengthInput; i++){
+
+    let pass = ""
+    for (let i = 0; i < len; i++) {
         const randomIndex = Math.floor(Math.random() * char.length);
         pass += char[randomIndex];
-        }
-        console.log(pass);
+    }
 
-
+    return pass;
 }
