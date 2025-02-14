@@ -8,6 +8,7 @@ const charLengthInput = document.getElementById("char-length-input");
 const passwordInputEl = document.getElementById("password-input");
 const checkboxes = document.querySelectorAll("#ul .checkbox");
 
+copyBtn.addEventListener("click", copyPassword)
 btn.addEventListener("click", generate);
 charLengthInput.addEventListener("change", (e) => {
     charLengthEl.textContent = e.target.value;
@@ -96,3 +97,13 @@ function generatePassword(upper, num, sym, len) {
 
     return pass;
 }
+
+function copyPassword() {  
+    if(!passwordInputEl || passwordInputEl == " ") return;
+    passwordInputEl.select();
+    passwordInputEl.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(passwordInputEl.value);
+    copyText.classList.remove("hide");
+    setTimeout(()=> copyText.classList.add("hide"), 3000)
+
+  }
