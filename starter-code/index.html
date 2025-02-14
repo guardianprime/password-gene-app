@@ -43,21 +43,26 @@
             />
           </div>
           <div class="list-container">
-            <ul>
+            <ul id="ul">
               <li>
-                <input type="checkbox" id="lowercase" checked />
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  id="lowercase"
+                  checked
+                />
                 <label for="lowercase">Include Lowercase Letters</label>
               </li>
               <li>
-                <input type="checkbox" id="uppercase" />
+                <input type="checkbox" class="checkbox" id="uppercase" />
                 <label for="uppercase">Include Uppercase Letters</label>
               </li>
               <li>
-                <input type="checkbox" id="numbers" />
+                <input type="checkbox" class="checkbox" id="numbers" />
                 <label for="numbers">Include Numbers</label>
               </li>
               <li>
-                <input type="checkbox" id="symbols" />
+                <input type="checkbox" class="checkbox" id="symbols" />
                 <label for="symbols">Include Symbols</label>
               </li>
             </ul>
@@ -65,7 +70,7 @@
           <div class="strength-container">
             <div class="strength-text"><span>Strength</span></div>
             <div class="strength-wrapper">
-              <span id="strength-name">MEDIUM</span>
+              <span id="strength-name"></span>
               <div class="strength-status-container">
                 <div class="strength-status"></div>
                 <div class="strength-status"></div>
