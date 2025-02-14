@@ -3,7 +3,7 @@ const copyBtn = document.getElementById("copy-img");
 const copyText = document.getElementById("copy-text");
 const charLengthEl = document.getElementById("char-length");
 const strengthNameEl = document.getElementById("strength-name");
-const strengthStatusEl = document.querySelectorAll(".strength-status");
+const strengthStatusEl = document.querySelectorAll("#strength-status-container .strength-status");
 const charLengthInput = document.getElementById("char-length-input");
 const passwordInputEl = document.getElementById("password-input");
 const checkboxes = document.querySelectorAll("#ul .checkbox");
@@ -13,7 +13,7 @@ charLengthInput.addEventListener("change", (e) => {
     charLengthEl.textContent = e.target.value;
 });
 
-const passwordStrengthTexts = ["LOW", "MEDIUM", "HIGH", "VERY HIGH"];
+const passwordStrengthTexts = ["TOO WEAK", "WEAK", "MEDIUM", "STRONG"];
 let passwordStrengthNumber = 0;
 
 checkboxes.forEach((checkbox) => {
@@ -28,11 +28,42 @@ checkboxes.forEach((checkbox) => {
 });
 
 function updatePasswordStrengthText() {
-
     strengthNameEl.textContent = passwordStrengthTexts[passwordStrengthNumber];
+    applyStatusColors(passwordStrengthTexts[passwordStrengthNumber]);
+}
+
+function applyStatusColors(passwordText) {
+    strengthStatusEl.forEach(div => {
+        div.style.backgroundColor = "";
+        div.style.border = "2px solid white";
+    });
+
+
+    if (passwordText == "TOO WEAK" || passwordText == undefined) {
+        strengthStatusEl[0].style.backgroundColor = "#f64a4a";
+        strengthStatusEl[0].style.border = "none";
+    } else if (passwordText == "WEAK") {
+        strengthStatusEl[0].style.backgroundColor = "#fb7c58";
+        strengthStatusEl[1].style.backgroundColor = "#fb7c58";
+        strengthStatusEl[0].style.border = "none";
+        strengthStatusEl[1].style.border = "none";
+    } else if (passwordText == "MEDIUM") {
+        strengthStatusEl[0].style.backgroundColor = "#f8cd65";
+        strengthStatusEl[1].style.backgroundColor = "#f8cd65";
+        strengthStatusEl[2].style.backgroundColor = "#f8cd65";
+        strengthStatusEl[0].style.border = "none";
+        strengthStatusEl[1].style.border = "none";
+        strengthStatusEl[2].style.border = "none";
+    } else {
+        strengthStatusEl.forEach((div) => {
+            div.style.backgroundColor = "#a4ffaf";
+            div.style.border = "none";
+        })
+    }
 }
 
 updatePasswordStrengthText();
+applyStatusColors();
 
 let lowercase = "abscdefghijklmnopqrstuvwxyz";
 let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

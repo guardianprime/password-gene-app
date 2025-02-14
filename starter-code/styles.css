@@ -133,12 +133,6 @@ ul {
 .strength-status {
   height: 100%;
   width: 21%;
-  background-color: yellow;
-}
-
-.strength-status:last-of-type {
-  border: 1px solid white;
-  background-color: black;
 }
 
 button {
