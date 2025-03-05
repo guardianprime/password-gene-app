@@ -10,9 +10,7 @@ const checkboxes = document.querySelectorAll("#ul .checkbox");
 
 copyBtn.addEventListener("click", copyPassword)
 btn.addEventListener("click", generate);
-charLengthInput.addEventListener("change", (e) => {
-    charLengthEl.textContent = e.target.value;
-});
+charLengthInput.addEventListener("input", () => { charLengthEl.textContent = charLengthInput.value; });
 
 const passwordStrengthTexts = ["TOO WEAK", "WEAK", "MEDIUM", "STRONG"];
 let passwordStrengthNumber = 0;
